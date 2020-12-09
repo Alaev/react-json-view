@@ -1,4 +1,5 @@
 import React from 'react';
+import './fetch-url.css';
 
 interface Props {
   label: string;

@@ -5,6 +5,7 @@ import FetchUrl from '../fetch-url/fetch-url';
 import _isObject from 'lodash/isObject';
 
 import './json-view.css';
+import { isNil } from 'lodash';
 
 function JsonView() {
   const [data, setData] = useState(null);
@@ -28,7 +29,7 @@ function JsonView() {
         value={url}
         handleChange={setUrl}
       />
-      {_isObject(data) ? <JsonNodeObject>{data}</JsonNodeObject> : null}
+      {_isObject(data) ? <JsonNodeObject>{data!}</JsonNodeObject> : null}
     </div>
   );
 }
