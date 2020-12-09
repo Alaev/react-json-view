@@ -1,9 +1,9 @@
 import React, { ReactChild } from 'react';
-import JsonNodeObject from '../json-node-object/json-node-object';
-import NodeValue from '../json-node-value/json-node-value';
 import _isObject from 'lodash/isObject';
 import _isArray from 'lodash/isArray';
 import _uuid from 'lodash/uniqueId';
+import JsonNodeObject from '../json-node-object/json-node-object';
+import NodeValue from '../json-node-value/json-node-value';
 
 interface Props {
   children: ReactChild;

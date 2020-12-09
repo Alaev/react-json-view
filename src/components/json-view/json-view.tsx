@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
+import _isObject from 'lodash/isObject';
 import JsonNodeObject from './json-node-object/json-node-object';
 import FetchUrl from '../fetch-url/fetch-url';
 
-import _isObject from 'lodash/isObject';
-
 import './json-view.css';
-import { isNil } from 'lodash';
 
 function JsonView() {
   const [data, setData] = useState(null);

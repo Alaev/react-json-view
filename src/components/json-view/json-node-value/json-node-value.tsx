@@ -5,7 +5,7 @@ import _isBoolean from 'lodash/isBoolean';
 
 interface Props {
   children: ReactChild;
-  index: number;
+  index?: number;
 }
 
 function JsonNodeValue({ children, index }: Props) {
@@ -13,16 +13,16 @@ function JsonNodeValue({ children, index }: Props) {
     return <span className="text-alert">null</span>;
   }
 
+  if (_isNumber(children)) {
+    return <span className="text-node-number">{children}</span>;
+  }
+
   if (_isString(children)) {
     return (
       <div className="text-node-value children-in-array">
-        {index >= 0 && `${index}: `}"{children}"
+        {index && index >= 0 && `${index}: `}"{children}"
       </div>
     );
-  }
-
-  if (_isNumber(children)) {
-    return <span className="text-node-number">{children}</span>;
   }
 
   if (_isBoolean(children) || _isBoolean(children)) {
