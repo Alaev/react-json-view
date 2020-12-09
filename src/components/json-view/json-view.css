@@ -1,0 +1,44 @@
+.json-view-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+
+.node {
+  border: 1px solid black;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  margin: 0.25rem 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.node:hover {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.child-node {
+  padding: 0.25rem;
+  color: green;
+  border-left: 2px solid black;
+  margin: 0.25rem;
+  margin-left: 1rem;
+}
+
+.text-node-value {
+  color: green;
+}
+
+.text-alert {
+  color: red;
+}
+
+.text-node-number {
+  color: blue;
+}

@@ -1,0 +1,19 @@
+.fetch-url-container {
+  border: 1px solid black;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.fetch-url-input {
+  width: 12rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.fetch-url-label {
+  color: blue;
+}
