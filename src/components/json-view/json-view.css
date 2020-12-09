@@ -1,8 +1,11 @@
 .json-view-container {
   display: flex;
+  border: 1px solid #eee;
+  background-color: #fff;
   flex-direction: column;
-  padding: 0.25rem;
-  margin: 0.25rem;
+  width: 95%;
+  padding: 1rem;
+  margin: 0 auto;
 }
 
 .node {
@@ -26,7 +29,7 @@
 .child-node {
   padding: 0.25rem;
   color: green;
-  border-left: 2px solid black;
+  border-left: 2px dashed rgb(83, 157, 226);
   margin: 0.25rem;
   margin-left: 1rem;
 }
@@ -41,4 +44,25 @@
 
 .text-node-number {
   color: blue;
+}
+
+@media only screen and (min-width: 800px) {
+  .json-view-container {
+    background-color: #fff;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .json-view-container {
+    max-width: 70vw;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .json-view-container {
+    max-width: 50vw;
+  }
 }

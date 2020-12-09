@@ -1,6 +1,6 @@
 .fetch-url-container {
   border: 1px solid black;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -8,7 +8,7 @@
 }
 
 .fetch-url-input {
-  width: 12rem;
+  width: 60%;
   border: 1px solid black;
   border-radius: 5px;
   padding: 0.5rem;
@@ -16,4 +16,16 @@
 
 .fetch-url-label {
   color: blue;
+}
+
+@media only screen and (min-width: 800px) {
+  .fetch-url-input {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .fetch-url-input {
+    width: 11rem;
+  }
 }
