@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import JsonNodeObject from './json-node-object/json-node-object';
+import { isObject } from '../../utils/utils';
 import FetchUrl from '../fetch-url/fetch-url';
 
+import './json-view.css';
 
 function JsonView() {
   const [data, setData] = useState(null);
@@ -24,9 +27,7 @@ function JsonView() {
         value={url}
         handleChange={setUrl}
       />
-
-      {data && console.log(data)
-      }
+      {isObject(data) ? <JsonNodeObject>{data}</JsonNodeObject> : null}
     </div>
   );
 }
