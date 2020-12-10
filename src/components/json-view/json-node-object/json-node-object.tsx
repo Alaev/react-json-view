@@ -2,7 +2,7 @@ import React, { ReactChild } from 'react';
 import JsonNodeChild from '../json-node-child/json-node-child';
 import JsonNode from '../json-node/json-node';
 interface Props {
-  children: ReactChild;
+  children: ReactChild | object;
 }
 function JsonNodeObject({ children }: Props) {
   return (

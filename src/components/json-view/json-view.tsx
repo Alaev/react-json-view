@@ -23,7 +23,7 @@ function JsonView() {
         handleChange={setUrl}
       />
       {loading ? <div>Loading...</div> : null}
-      {_isObject(data) ? <JsonNodeObject>{data!}</JsonNodeObject> : null}
+      {_isObject(data) ? <JsonNodeObject>{data || {}}</JsonNodeObject> : null}
     </div>
   );
 }

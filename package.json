@@ -3,6 +3,7 @@
     "start": "snowpack dev",
     "build": "snowpack build",
     "test": "jest",
+    "test:watch": "jest --watch",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
   },
