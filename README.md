@@ -2,6 +2,7 @@
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
+> Using Jest as default test runner (chai & web-test-runner were removed)
 ## Available Scripts
 
 ### npm start
@@ -21,5 +22,5 @@ Your app is ready to be deployed!
 
 ### npm test
 
-Launches the application test runner.
+Launches the application test runner Jest .
 Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
