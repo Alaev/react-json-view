@@ -1,9 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import FetchUrl from './fetch-url';
-import JsonNode from '../json-view/json-node/json-node';
 import faker from 'faker';
-import { random } from 'lodash';
 
 describe('<FetchUrl>', () => {
   let props: any, setup: any;
