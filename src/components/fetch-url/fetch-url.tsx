@@ -21,11 +21,12 @@ export default React.memo(function FetchUrl({
     <div className="fetch-url-container">
       <label className="fetch-url-label">{label}</label>
       <input
+        aria-label={label}
         className="fetch-url-input"
         onChange={handleInputChange}
         value={value}
       />
-      <button className="button-primary" onClick={onClick}>
+      <button className="button-primary" onClick={onClick} disabled={value === ''}>
         Send
       </button>
     </div>

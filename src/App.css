@@ -16,3 +16,9 @@
   border: 1px solid green;
   transition: border ease-in 0.2s;
 }
+
+.button-primary:disabled{
+  background-color: #ccc;
+  color:black;
+  cursor: not-allowed;
+}
