@@ -9,6 +9,10 @@ interface Props {
 }
 
 function JsonNode({ jsonKey, children }: Props) {
+  if (jsonKey && !_isString(jsonKey)) {
+    return null;
+  }
+
   const [showChildren, setShowChildren] = useState(false);
 
   const toggleChildrenVisibility = () => {
@@ -17,9 +21,6 @@ function JsonNode({ jsonKey, children }: Props) {
   };
 
   const [toggledIcon, setToggledIcon] = useState(false);
-  if (jsonKey && !_isString(jsonKey)) {
-    return null;
-  }
 
   return (
     <>

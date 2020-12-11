@@ -10,9 +10,7 @@ function JsonView() {
   const { loading, data, updateUrl } = useFetch('');
   const [url, setUrl] = useState('');
 
-  const onClick = () => {
-    updateUrl(url);
-  };
+  const onClick = () => updateUrl(url);
 
   return (
     <div className="json-view-container">

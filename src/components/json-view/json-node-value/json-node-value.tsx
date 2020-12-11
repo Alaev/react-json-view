@@ -19,9 +19,9 @@ function JsonNodeValue({ children, index }: Props) {
 
   if (_isString(children)) {
     return (
-      <div className="text-node-value">
+      <span className="text-node-value">
         {index && index >= 0 && `${index}: `}"{children}"
-      </div>
+      </span>
     );
   }
 
