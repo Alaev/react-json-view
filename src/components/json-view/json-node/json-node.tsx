@@ -1,8 +1,8 @@
-import React, { ReactChild, useState } from 'react';
+import React, { ReactChild, useCallback, useMemo, useState } from 'react';
 import _isString from 'lodash/isString';
 import ChevronDown from '../../../components/icons/chevron-down';
 import ChevronRight from '../../../components/icons/chevron-right';
-
+import useVisibility from '../../../hooks/useVisibility';
 interface Props {
   jsonKey: string | number;
   children: ReactChild;
@@ -12,22 +12,22 @@ function JsonNode({ jsonKey, children }: Props) {
   if (jsonKey && !_isString(jsonKey)) {
     return null;
   }
-
-  const [showChildren, setShowChildren] = useState(false);
-
-  const toggleChildrenVisibility = () => {
-    setShowChildren((prev: boolean) => !prev);
-    setToggledIcon((prev: boolean) => !prev);
-  };
-
-  const [toggledIcon, setToggledIcon] = useState(false);
+  const [
+    ChildrenVisibility,
+    setVisibility,
+    IconVisibility,
+  ] = useVisibility(<div className="child-node">{children}</div>, false, [
+    <ChevronDown />,
+    <ChevronRight />,
+  ]);
+  const iconDirection = useMemo(() => IconVisibility, [IconVisibility]);
 
   return (
     <>
-      <div className="node" onClick={toggleChildrenVisibility}>
-        {jsonKey} {toggledIcon ? <ChevronDown /> : <ChevronRight />}
+      <div className="node" onClick={setVisibility}>
+        {jsonKey} {iconDirection}
       </div>
-      {showChildren && <div className="child-node">{children}</div>}
+      {ChildrenVisibility}
     </>
   );
 }
