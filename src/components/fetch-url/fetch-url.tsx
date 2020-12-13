@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './fetch-url.css';
 
 interface Props {
@@ -14,8 +14,13 @@ export default React.memo(function FetchUrl({
   value,
   handleChange,
 }: Props) {
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    handleChange(e.target.value);
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value),
+    [],
+  );
+
+//  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)
+
 
   return (
     <div className="fetch-url-container">
@@ -26,7 +31,11 @@ export default React.memo(function FetchUrl({
         onChange={handleInputChange}
         value={value}
       />
-      <button className="button-primary" onClick={onClick} disabled={value === ''}>
+      <button
+        className="button-primary"
+        onClick={onClick}
+        disabled={value === ''}
+      >
         Send
       </button>
     </div>

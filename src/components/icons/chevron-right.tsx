@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ChevronRight() {
+export default React.memo(function ChevronRight() {
   return (
     <span className="icon">
       <svg
@@ -18,6 +18,4 @@ function ChevronRight() {
       </svg>
     </span>
   );
-}
-
-export default ChevronRight;
+});

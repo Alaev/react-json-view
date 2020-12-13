@@ -19,7 +19,6 @@
   font-size: 1.25rem;
   margin: 0.25rem 0;
   justify-content: space-between;
-  align-items: center;
 }
 
 .node:hover {

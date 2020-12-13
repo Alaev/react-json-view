@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import _isObject from 'lodash/isObject';
-import JsonNodeObject from './json-node-object/json-node-object';
+import JsonNodeChild from './json-node-child/json-node-child';
 import FetchUrl from '../fetch-url/fetch-url';
 import useFetch from '../../hooks/useFetch';
 
 import './json-view.css';
 
-function JsonView() {
+export default React.memo(function JsonView() {
   const { loading, data, updateUrl } = useFetch('');
   const [url, setUrl] = useState('');
 
@@ -21,9 +21,8 @@ function JsonView() {
         handleChange={setUrl}
       />
       {loading ? <div>Loading...</div> : null}
-      {_isObject(data) ? <JsonNodeObject>{data || {}}</JsonNodeObject> : null}
+
+      <JsonNodeChild>{data || {}}</JsonNodeChild>
     </div>
   );
-}
-
-export default JsonView;
+});

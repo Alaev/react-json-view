@@ -2,9 +2,10 @@ import React, { ReactChild } from 'react';
 import _isString from 'lodash/isString';
 import _isNumber from 'lodash/isNumber';
 import _isBoolean from 'lodash/isBoolean';
+import type { JsonObject } from '../json-node-child/json-node-child';
 
 interface Props {
-  children: ReactChild;
+  children: JsonObject;
   index?: number;
 }
 

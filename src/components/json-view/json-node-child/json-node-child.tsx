@@ -1,12 +1,14 @@
-import React, { ReactChild } from 'react';
+import React from 'react';
 import _isObject from 'lodash/isObject';
 import _isArray from 'lodash/isArray';
 import _uuid from 'lodash/uniqueId';
 import JsonNodeObject from '../json-node-object/json-node-object';
 import NodeValue from '../json-node-value/json-node-value';
 
+export type JsonObject = {} | [] | string | number | boolean | null;
+
 interface Props {
-  children: ReactChild;
+  children: JsonObject;
   index?: number;
 }
 
@@ -18,7 +20,7 @@ function JsonNodeChild({ children, index = undefined }: Props) {
   if (_isArray(children)) {
     return (
       <>
-        {children.map((child: ReactChild, index: number) => (
+        {children.map((child: JSON, index: number) => (
           <JsonNodeChild key={_uuid()} index={index}>
             {child}
           </JsonNodeChild>
